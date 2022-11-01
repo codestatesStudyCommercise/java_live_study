@@ -7,7 +7,7 @@
 
 ---
 
-# JDK / JRE / JVM
+# JDK / JRE / JVM 
 
 ![img](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/7233e4a1-ce31-4863-a1be-93da068576f2/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221031%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221031T132926Z&X-Amz-Expires=86400&X-Amz-Signature=8bfad09d2419a6d971312d6511d9ce154893bd6d3e3cd569ed4e44005abcdf01&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22Untitled.png%22&x-id=GetObject)
 
