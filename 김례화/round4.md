@@ -75,31 +75,6 @@ MVC (model, view, controller)
 MVC 패턴은 하나의 어플리케이션, 프로젝트를 구성할때 그 구성요소를 세가지의 역할로 구분한 디자인 패턴이다.
 ```
 
-___
-### import문
-
-다른 패키지 내의 클래스를 사용하기 위해 사용.
-일반적으로 패키지 구문과 클래스문 사이에 작성한다.
-
-형식
-import 패키지명.클래스명; 또는 import 패키지명.*;
-
-``*`` : ``모두`` 의 의미
--> 같은 패키지 내에서 여러 클래스가 사용될 때는 여러번 작성하지 않고, ``import 패키지명.*;`` 을 작성하여 간단하게 표현한다.
-
-import문을 사용하지 않을 경우, 다른 패키지 클래스 사용 방법
-
-```java
-package practicepack.test2; 
-// 같은 패키지 내의 test 클래스의 ExampleImport 클래스를 사용하려 할 때
-
-public class PackageImp {
-		public static void main(String[] args) {
-			practicepack.test.ExampleImport example 
-            	= new practicepack.test.ExampleImport();
-		}
-}
-```
 
 ---
 cf)
