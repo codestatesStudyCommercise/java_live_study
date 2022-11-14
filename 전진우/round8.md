@@ -281,7 +281,7 @@ protected final int basicValueProtected = 77777;
 - enum 클래스와 함께 동작하는 특수한 Set 컬렉션이다.
 - java.util.EnumSet
     
-    ![Untitled](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/1e2605f0-2d5e-4c85-98ba-7f9172c98e1b/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221111%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221111T143436Z&X-Amz-Expires=86400&X-Amz-Signature=1987d9d4b17c475765c2fadfbb11ac3169293a0cdd330b549501c7973fc299a6&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22Untitled.png%22&x-id=GetObject)
+    ![Untitled](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/1e2605f0-2d5e-4c85-98ba-7f9172c98e1b/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221114%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221114T072004Z&X-Amz-Expires=86400&X-Amz-Signature=da25f9d7598cab829674080f9b72b896df77777b16c1e552d35e9e1371fd9632&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22Untitled.png%22&x-id=GetObject)
     
     [https://www.baeldung.com/java-enumset](https://www.baeldung.com/java-enumset)
     
@@ -326,7 +326,7 @@ fail-safe 하므로 컬렉션을 반복하면서 컬렉션이 수정될 때 *Co
     - EnumSet의 팩토리 메서드는 enum 요소의 수에 따라 다른 인스턴스를 생성한다.
         - 이때 컬렉션에 저장될 요수의 수가 아니라 열거형 클래스의 크기만을 고려한다.
             
-            ![Untitled](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/a2532a89-908d-4ac0-91d8-c2c715d592af/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221111%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221111T143514Z&X-Amz-Expires=86400&X-Amz-Signature=f106c88b2c421218c420bf1932cd33e34ef421aa603249b352ad4f0a375521cc&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22Untitled.png%22&x-id=GetObject)
+            ![Untitled](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/a2532a89-908d-4ac0-91d8-c2c715d592af/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221114%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221114T072136Z&X-Amz-Expires=86400&X-Amz-Signature=f709aa479401b56dd6bf052bb427c097ab129430a5d992261cba7b581d03cf96&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22Untitled.png%22&x-id=GetObject)
             
             < java.util.EnumSet > 
             
