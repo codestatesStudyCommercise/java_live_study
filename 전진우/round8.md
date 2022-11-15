@@ -281,7 +281,7 @@ protected final int basicValueProtected = 77777;
 - enum 클래스와 함께 동작하는 특수한 Set 컬렉션이다.
 - java.util.EnumSet
     
-    ![Untitled](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/1e2605f0-2d5e-4c85-98ba-7f9172c98e1b/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221114%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221114T072004Z&X-Amz-Expires=86400&X-Amz-Signature=da25f9d7598cab829674080f9b72b896df77777b16c1e552d35e9e1371fd9632&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22Untitled.png%22&x-id=GetObject)
+    ![Untitled](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/1e2605f0-2d5e-4c85-98ba-7f9172c98e1b/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221115%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221115T092343Z&X-Amz-Expires=86400&X-Amz-Signature=25cb88eb422075d2be5a835d3a7acfdfee528f3cb4f1a8bb0cff106169f4af7d&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22Untitled.png%22&x-id=GetObject)
     
     [https://www.baeldung.com/java-enumset](https://www.baeldung.com/java-enumset)
     
