@@ -9,7 +9,7 @@
 
 # JDK / JRE / JVM 
 
-![img](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/7233e4a1-ce31-4863-a1be-93da068576f2/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221031%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221031T132926Z&X-Amz-Expires=86400&X-Amz-Signature=8bfad09d2419a6d971312d6511d9ce154893bd6d3e3cd569ed4e44005abcdf01&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22Untitled.png%22&x-id=GetObject)
+![img](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/7233e4a1-ce31-4863-a1be-93da068576f2/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221115%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221115T090028Z&X-Amz-Expires=86400&X-Amz-Signature=ea75e301609d5bc5281ac65574c7d1396ac03d5c98b1a81d20dcce866c4ce81b&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22Untitled.png%22&x-id=GetObject)
 
 - [https://coderhalt.com/difference-between-jdk-jre-and-jvm-in-java/](https://coderhalt.com/difference-between-jdk-jre-and-jvm-in-java/)
 - JDK , JRE, JVM 은 자바 프로그래밍에 사용되는 3대 핵심 기술 패키지
@@ -42,7 +42,7 @@
     - 실행을 위한 JRE 를 포함하고 있다.
     - JDK 안에는 개발 시 필요한 라이브러리들과 javac, javadoc 등의 개발 도구들이 포함
         
-        ![Untitled](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/ea032248-248d-486e-9c4b-510ae4bcfe89/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221031%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221031T133359Z&X-Amz-Expires=86400&X-Amz-Signature=6f16813b31ab6f55cd0863874083b18579e29f91fc5dd7a29232516deb9528ba&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22Untitled.png%22&x-id=GetObject)
+        ![Untitled](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/ea032248-248d-486e-9c4b-510ae4bcfe89/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221115%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221115T090054Z&X-Amz-Expires=86400&X-Amz-Signature=d5f56a3ac7d5fb6acccbc669cf29ec42860a17ca825dce02738b203ce4923a95&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22Untitled.png%22&x-id=GetObject)
         
         [https://docs.oracle.com/javase/8/docs/](https://docs.oracle.com/javase/8/docs/)
         
@@ -93,7 +93,7 @@
 
 - **JDK 의 자바 어플리케이션 개발에서의 생명주기**
 
-![Untitled](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/45e544fa-0c23-45ca-b4d3-a036941ed021/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221031%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221031T133416Z&X-Amz-Expires=86400&X-Amz-Signature=c54a930caae95e2ba983cf8207d1cfa9635319a6d72b69892af8b9e7c7f1371a&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22Untitled.png%22&x-id=GetObject)
+![Untitled](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/45e544fa-0c23-45ca-b4d3-a036941ed021/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221115%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221115T090131Z&X-Amz-Expires=86400&X-Amz-Signature=b089e8027aca448705d6277e82e14dcc70a00138c93c4631b868276534f1192d&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22Untitled.png%22&x-id=GetObject)
 
 [https://www.infoworld.com/article/3296360/what-is-the-jdk-introduction-to-the-java-development-kit.html](https://www.infoworld.com/article/3296360/what-is-the-jdk-introduction-to-the-java-development-kit.html)
 
@@ -146,7 +146,7 @@ JVM은 이 바이트코드를 해당 OS 의 기계어로 변환하여 OS 로 전
 
 - Java Virtual Machine
     
-    ![Untitled](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/b4e8c569-ddbf-46f0-8873-cbbf052c2d70/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221031%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221031T133450Z&X-Amz-Expires=86400&X-Amz-Signature=3adcaded6fc628343a607d493b30a867142aae073c4f6c7acb7a7f11199bf9ba&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22Untitled.png%22&x-id=GetObject)
+    ![Untitled](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/b4e8c569-ddbf-46f0-8873-cbbf052c2d70/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221115%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221115T090202Z&X-Amz-Expires=86400&X-Amz-Signature=b7941c306213749e3c04cd77bb3932238a07ff4eced476254966641fb81f0fcb&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22Untitled.png%22&x-id=GetObject)
     
     [https://medium.com/@ahn428/java-jvm-java-virtual-machine-jre-java-runtime-environment-jdk-java-developement-kit-fed91def1d6f](https://medium.com/@ahn428/java-jvm-java-virtual-machine-jre-java-runtime-environment-jdk-java-developement-kit-fed91def1d6f)
     
@@ -171,11 +171,11 @@ JVM은 이 바이트코드를 해당 OS 의 기계어로 변환하여 OS 로 전
 
 - Class Loader 는 JRE 에 속하나 JVM 동작상 필요하므로 함께 설명
     
-    ![Untitled](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/4497fbef-65fb-4cdc-996d-f6dd80e6e0f0/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221031%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221031T133510Z&X-Amz-Expires=86400&X-Amz-Signature=92e5505e71e0bc7c2a35267d1acdab88d0ece9f144d681e511db687610f13f31&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22Untitled.png%22&x-id=GetObject)
+    ![Untitled](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/4497fbef-65fb-4cdc-996d-f6dd80e6e0f0/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221115%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221115T090230Z&X-Amz-Expires=86400&X-Amz-Signature=6340e5ef2908547caa0691328a8c51062dc06a43a5e6ff08d561451a101c6523&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22Untitled.png%22&x-id=GetObject)
     
     [https://www.oracle.com/webfolder/technetwork/tutorials/obe/java/gc01/index.html](https://www.oracle.com/webfolder/technetwork/tutorials/obe/java/gc01/index.html)
     
-    ![Untitled](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/02021582-a1c8-49ef-bfb7-a9b94f50261d/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221031%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221031T133529Z&X-Amz-Expires=86400&X-Amz-Signature=f918b53bd853a5ad3dd7c516c8a4a3f98fa67f0b8165dba79663e482536cb455&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22Untitled.png%22&x-id=GetObject)
+    ![Untitled](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/02021582-a1c8-49ef-bfb7-a9b94f50261d/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221115%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221115T090250Z&X-Amz-Expires=86400&X-Amz-Signature=0d459ccfb725df9422c59bb1f3e6d475ac54ac6aa2d6c6b548f6337752abe834&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22Untitled.png%22&x-id=GetObject)
     
     [https://velog.io/@host92/JVMJava-Virtual-Machine](https://velog.io/@host92/JVMJava-Virtual-Machine)
     
