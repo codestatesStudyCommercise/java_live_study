@@ -1,4 +1,4 @@
-# JVM 동작 과정 
+# 1-1. JVM 구성 및 동작 과정 
 
 <aside>
 ➡️ 작성일 : 2022.10.30
@@ -12,7 +12,7 @@
 > 클래스 로더는 자바 바이트코드를 JVM 으로 동적으로 로드하는 JRE 의 일부이다.
 > 
 
-![Untitled](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/c7fb608d-384c-4c0e-b83c-32066cfcd147/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221031%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221031T133654Z&X-Amz-Expires=86400&X-Amz-Signature=77eef4300bbecfc7bd2b28bced3656b57246787433222ea35a8d01dc0575fa1e&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22Untitled.png%22&x-id=GetObject)
+![Untitled](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/c7fb608d-384c-4c0e-b83c-32066cfcd147/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221115%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221115T091136Z&X-Amz-Expires=86400&X-Amz-Signature=bed318926245c6601e682de037eb836875a457b8e1db856faa1e5c59692143a6&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22Untitled.png%22&x-id=GetObject)
 
 [https://coding-factory.tistory.com/827](https://coding-factory.tistory.com/827)
 
@@ -42,7 +42,7 @@
             - JVM 은 클래스 로딩 요청을 받을 클래스 로더를 선택하기 위해 위임계층을 따른다.
             - 계층 구조로 인해 가시성, 유일성 원칙을 충족 가능
                 
-                ![Untitled](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/f0f9239a-e78c-4b09-aaf9-a59c87707ee1/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221031%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221031T133825Z&X-Amz-Expires=86400&X-Amz-Signature=c174b29396aa267e2b3cba4039f64d766659cd3e7b1faee90cd7745d18374e67&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22Untitled.png%22&x-id=GetObject)
+                ![Untitled](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/f0f9239a-e78c-4b09-aaf9-a59c87707ee1/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221115%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221115T091205Z&X-Amz-Expires=86400&X-Amz-Signature=16e7b00d70a737c2d57e622efeff7b29d9d6ef9b07fe4f40fdda790c067e3fd1&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22Untitled.png%22&x-id=GetObject)
                 
                 [https://blog.hexabrain.net/397](https://blog.hexabrain.net/397)
                 
@@ -86,7 +86,7 @@
     - 클래스 파일은 클래스 로더의 3단계를 거쳐 JVM 에서 사용될 수 있게 된다.
     - 처음으로 클래스를 참조할 때 클래스 파일(.class)을 로드하고, 링크하고, 초기화 한다.
         
-        ![Untitled](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/5448c1f5-5dc9-4d36-8892-d789019c0b78/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221031%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221031T133710Z&X-Amz-Expires=86400&X-Amz-Signature=0e92275b5cef82653769814e25c105328c328e14383ff14390be0398ea7c1f41&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22Untitled.png%22&x-id=GetObject)
+        ![Untitled](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/5448c1f5-5dc9-4d36-8892-d789019c0b78/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221115%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221115T091238Z&X-Amz-Expires=86400&X-Amz-Signature=66e820c536821823f3ab6a3fb8aad8a413b5d762356cc19186b734546a4ec7a3&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22Untitled.png%22&x-id=GetObject)
         
         [https://javatutorial.net/jvm-explained/](https://javatutorial.net/jvm-explained/)
         
@@ -118,7 +118,7 @@
                     - ***자료형에 따른 기본값
                         - [https://blog.hexabrain.net/397](https://blog.hexabrain.net/397)
                         
-                        ![Untitled](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/2845873c-ef7c-4532-9b37-80b659e0ef9a/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221031%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221031T134045Z&X-Amz-Expires=86400&X-Amz-Signature=1b2237a3c5523035c0631d288c7b61eabad46608991379551e10ae19d0240b42&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22Untitled.png%22&x-id=GetObject)
+                        ![Untitled](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/2845873c-ef7c-4532-9b37-80b659e0ef9a/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221115%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221115T091306Z&X-Amz-Expires=86400&X-Amz-Signature=554bede67f06e5292f69a097fe2ab37746c5a48bf7f408da25ebc147ac7b1996&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22Untitled.png%22&x-id=GetObject)
                         
             - 2-3. Resolution (분석)
                 - 클래스가 참조하는 객체의 실제 메모리 주소값을 대입하는 단계
@@ -155,7 +155,7 @@
     (Memory Leak 혹은 GC)
     > 
     
-    ![Untitled](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/1c33fe49-ebfa-4ab3-af7f-b95755f2c889/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221031%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221031T134118Z&X-Amz-Expires=86400&X-Amz-Signature=8359b4867826c49773bdbaebbf7498b03d7122491e0516da3173e610858fbbfe&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22Untitled.png%22&x-id=GetObject)
+    ![Untitled](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/1c33fe49-ebfa-4ab3-af7f-b95755f2c889/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221115%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221115T091734Z&X-Amz-Expires=86400&X-Amz-Signature=052d44ae6e780bdc8ef07681a25a5647e18c7f3f4409c0952c5dc8bf912fe4cc&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22Untitled.png%22&x-id=GetObject)
     
     [https://www.programcreek.com/2013/04/jvm-run-time-data-areas/](https://www.programcreek.com/2013/04/jvm-run-time-data-areas/)
     
@@ -227,7 +227,7 @@ Execution Engine 에 제공하여 정의된 내용대로 바이트 코드를 실
     - 참고 : 컴파일러와 인터프리터
         - [https://coding-factory.tistory.com/303](https://coding-factory.tistory.com/303)
     
-    ![Untitled](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/05998ce7-f567-4b69-bb59-edffaf83a645/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221031%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221031T134150Z&X-Amz-Expires=86400&X-Amz-Signature=e86212d80de88cfc05f307904962851ab914e05bf22781f62f397328e28f7b70&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22Untitled.png%22&x-id=GetObject)
+    ![Untitled](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/05998ce7-f567-4b69-bb59-edffaf83a645/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221115%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221115T091809Z&X-Amz-Expires=86400&X-Amz-Signature=3a0c3ea76dbb1ef5a5dd78f3a895db2af60c38dcbcf5f14df28af389b82a3c9d&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22Untitled.png%22&x-id=GetObject)
     
     [https://www.javatpoint.com/java-interpreter](https://www.javatpoint.com/java-interpreter)
     
@@ -285,69 +285,7 @@ Execution Engine 에 제공하여 정의된 내용대로 바이트 코드를 실
 
 # 4. Garbage Collection
 
-- 자바의 메모리 관리 방법 중의 하나로 
-JVM Heap 영역에서 동적으로 할당했던 메모리 영역 중 필요없게 된 메모리 영역을 주기적으로 삭제하는 프로세스
-- Java 의 Heap 영역에서 참조되고 있지 않는 객체들의 메모리를 할당, 해제하는 과정
-- 장점
-    - 개발자가 메모리관리를 직접 해주지 않아도 되므로 개발에 온전히 집중할 수 있다.
-- 단점
-    - 개발자가 메모리가 언제 해제되는지 정확하게 알 수 없다.
-    - 가비지컬렉션이 동작하는 동안에는 다른 동작을 멈추기 때문에 오버헤드가 발생한다.
-- 명시적으로 불필요한 데이터는 null 로 선언
-- System.gc() 메소드로 GC 를 할 수 있으나 프로그램의 성능에 큰 영향을 미침
-- GC 과정에서 중요한 개념은 Reachability, Stop-the-world
-- 영역에 따라 Minor GC, Major GC 로 나뉨
-- 동작
-    - **heap 영역**
-        
-        ![Untitled](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/59e55f51-311f-4add-af05-45d537e97aab/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221031%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221031T134217Z&X-Amz-Expires=86400&X-Amz-Signature=2d5ad54286dd7e7e3b2fe0f1f9d5afc28b8d2b397c14ddb587a01b48f885e20a&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22Untitled.png%22&x-id=GetObject)
-        
-        [https://www.waitingforcode.com/off-heap/on-heap-off-heap-storage/read](https://www.waitingforcode.com/off-heap/on-heap-off-heap-storage/read)
-        
-        - JVM 의 가비지컬렉터는 처음 설계될 때 Week Generational Hypothesis 를 전제로 설계
-            - 대부분의 객체는 금방 접근 불가능한 상태가 된다.
-            - 오래된 객체에서 새로운 객체로의 참조는 아주 드물게 존재한다.
-        - 즉 객체는 대부분 일회성이며, 메모리에 오랫동안 남아있는 경우는 드물다.
-        - 따라서 객체의 생존기간에 따라 물리적은 Heap 영역을 나누었다.
-            - Young generation
-                - Young generation 영역은 다시 Eden, 두군데의 Survivor 영역으로 나누어 관리한다.
-                - 새롭게 생성된 객체가 할당(Allocation)되는 영역 (대부분 Eden 영역 이후 survivor 로 이동 )
-                - 대부분의 객체가 금방 Unreachable 상태가 되기 때문에 많은 객체가 Young 영역에 생성되었다 사라진다.
-                - Young 영역에 대한 가비지 컬렉션을 Minor GC 라고 한다.
-                - Minor GC 는 상대적으로 빈번하게 발생하지만 짧게 끝난다.
-                - 가비지컬렉션의 동작이 Old Generation 까지 스캔해서 가비지를 찾지 않도록 해서 더욱짧은 Stop-the-world 시간 안에 메모리를 회수 할 수 있도록 했다.
-            - Old generation
-                - Young영역에서 Reachable 상태를 유지하여 살아남은 객체가 복사되는 영역
-                - Young 영역보다 크게 할당되며 영역의 크기가 큰 만큼 가비지는 적게 발생한다.
-                    - Old 영역이 Young 영역보다 크게 할당되는 이유는 Young 영역의 수명이 짧은 객체들은 큰 공간을 필요로 하지 않으며 
-                    큰 객체들은 Young 영역이 아니라 바로 Old 영역에 할당되기 때문이다.
-                - Old 영역에 대한 가비지 컬렉션을 Major GC 또는 Full GC 라고 한다.
-                - Old generation 영역에 있는 개체가 Young generation 영역의 객체를 참조한다면 카드테이블에 참조여부를 기록
-                    
-                    (Old 영역의 card table 이 존재)
-                    
-                    - Minor GC 를 수행할 때 Old Generation 객체 전체를 스캔하는 대신 카드 테이블에 있는 참조 정보들만 확인해서 
-                    Young generation 으로의 참조가 있는 Old Generation 영역만 스캔해서 가비지 여부를 판별
-                    - Old Generation 에서 Young Generation 으로의 참조가 발생하면 Write Barrier 를 이용해 Card Table 에서 해당 영역에 참조가 있었다고 표시한다.
-                    - 카드테이블
-                        - [https://intrepidgeeks.com/tutorial/jvm-card-table](https://intrepidgeeks.com/tutorial/jvm-card-table)
-                - ~~Perm~~
-                    - Java8 부터 제가됨
-    - **stop-the-world**
-        - GC 를 실행하기 위해 JVM 이 애플리케이션 실행을 멈추는 것
-        - stop-the-world 가 발생하면 GC 를 실행하는 쓰레드를 제외한 
-        나머지 쓰레드는 모두 작업을 멈춘다.
-        - GC 작업을 완료한 이후에 중단했던 작업을 다시 시작한다.
-        - stop-the-world 시간을 줄이는것이 GC 튜닝
-        - 어떤 GC 알고리즘을 사용해도 stop-the-world 는 발생한다.
-    - **Reachability**
-        - GC 에서 객체가 Garbage 인지 판별하는 개념
-        - 유효한 참조의 최초 셋을 Root set 이라고 함
-        - Heap 영역 내부의 객체들은 Method Area, java stack, Natice Stack 에서 참조되면 reachable 로 판정
-    - **GC 알고리즘**
-        - GC 기본알고리즘
-        - 발생 시점에 따른 GC
-        - 여러가지 GC 방식
+    - 별도 정리
 
 ---
 
