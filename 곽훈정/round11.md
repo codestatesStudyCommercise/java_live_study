@@ -91,7 +91,38 @@ public class Sample03 {
 //Hello
 ```
 
+### 특정 타입의 임의 개체에 대한 인스턴스 메서드 참조
+인스턴스의 원형 객체명을 적어주고 더블 콜론 다음에 메서드명을 적어 참조한다.
+```java
+public class Sample04 {
+  public static void main(String[] args) {
+    var list = Arrays.asList( new Person(1, "철수")
+                            , new Person(2, "영희")
+                            , new Person(3, "짱구")
+                            , new Person(4, "맹구"));
+    System.out.println("== 람다식");
+    list.forEach(list.forEach(x -> x.toObjString());
+    System.out.println("== 메서드 참조);
+    list.forEach(Person::toObjString);
+  }
+}
+@Getter
+@Setter
+@AllArgsConstructor
+class Person {
+  private Integer no;
+  private String name;
+    public void toObjString() {
+      System.out.println("Person [no=" + no + ", name=" + name + "]");
+    }
+}
+```
 
+### 생성자 참조
+객체명과 더블 콜론이 위치하고 이어서 new 키워드를 사용한다.
+- 생성자 참조 기본 문법
+  - (Object name)::new
+  - 매개변수가 없는 기본 생성자를 참조하여 생성하게 된다.
 
 
 
