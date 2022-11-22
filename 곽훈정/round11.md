@@ -1,9 +1,9 @@
-# ** 람다(Lambda)**
+# **람다(Lambda)**
 ---
 람다 함수는 프로그래밍 언어에서 사용되는 개념으로 익명 함수를 지칭하는 용어이다.
 
 
-## ** 함수형 인터페이스(Functinal interface)**
+## **함수형 인터페이스(Functinal interface)**
 
 - Java 8에서부터 제공하는 함수형 인터페이스는 단 **한개의 추상 메서드를 갖고 있는 인터페이스**를 말하며 @FunctionalInterface을 붙여서 함수형 인터페이스임을 표현한다.
 - 한개의 추상 메서드 외에 다른 추상 메서드가 있으면 오류가 발생하기 때문에 함수형 인터페이스 규칙을 잘 지켜서 만들어야 한다.
@@ -23,7 +23,7 @@ interface Sample01Function {
 ```
 
 
-## ** 람다식(Lambda expression) 사용법**
+## **람다식(Lambda expression) 사용법**
 
 (매개변수 ...) -> 실행문 // 실행문이 한 줄일 경우
 
@@ -38,7 +38,7 @@ interface Sample01Function {
 [java.util.function API:]<https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/util/function/package-summary.html>
 
 
-## ** 메서드 참조(Method reference)**
+## **메서드 참조(Method reference)**
 
 정확히 매개변수를 추론할 수 있다면 메서드 참조를 할 수 있다.
 - 메서드 참조의 종류
