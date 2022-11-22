@@ -1,9 +1,9 @@
-**#람다(Lambda)**
+**# 람다(Lambda)**
 ---
 람다 함수는 프로그래밍 언어에서 사용되는 개념으로 익명 함수를 지칭하는 용어이다.
 
 
-**##함수형 인터페이스(Functinal interface)**
+**## 함수형 인터페이스(Functinal interface)**
 
 - Java 8에서부터 제공하는 함수형 인터페이스는 단 **한개의 추상 메서드를 갖고 있는 인터페이스**를 말하며 @FunctionalInterface을 붙여서 함수형 인터페이스임을 표현한다.
 - 한개의 추상 메서드 외에 다른 추상 메서드가 있으면 오류가 발생하기 때문에 함수형 인터페이스 규칙을 잘 지켜서 만들어야 한다.
@@ -23,7 +23,7 @@ interface Sample01Function {
 ```
 
 
-**##람다식(Lambda expression) 사용법**
+**## 람다식(Lambda expression) 사용법**
 
 (매개변수 ...) -> 실행문 // 실행문이 한 줄일 경우
 
@@ -38,7 +38,7 @@ interface Sample01Function {
 [java.util.function API:]<https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/util/function/package-summary.html>
 
 
-**##메서드 참조(Method reference)**
+**## 메서드 참조(Method reference)**
 
 정확히 매개변수를 추론할 수 있다면 메서드 참조를 할 수 있다.
 - 메서드 참조의 종류
@@ -49,7 +49,7 @@ interface Sample01Function {
 - 메서드 참조 기본 문법
   - (Obejct name)::(Method name) : 개체의 이름과 메서드의 이름 사이에 더블 콜론을 구분하는 연산자로 사용한다.
 
-###static 메서드 참조
+### static 메서드 참조
 클래스 내에 static으로 구성된 메서드를 참조 메서드로 사용할 경우이다. 
 ```java
 public class Sample02 {
@@ -69,7 +69,7 @@ forEach() 메서드는 Consumer로 구성되어있다. - 반환자료형이 없�
 doWrite() 메서드와 같은 형태를 띄고 있기 때문에 오류 없이 실행되는 것이다.
 매개변수로 함수형 인터페이스를 사용했기 때문에 값을 갖는 변수를 넘기는게 아니라 람다식이라 메서드 참조 형태의 메서드를 넘겨야 한다는 점에 유의해야 한다.
 
-###특정 개체의 인스턴스 메서드참조
+### 특정 개체의 인스턴스 메서드참조
 생성된 인스턴스의 메서드를 참조할 수도 있다.
 ```java
 public class Sample03 {
