@@ -37,7 +37,7 @@ interface Sample01Function {
 - 매개변수가 없다면 아무것도 넣지 않아도 된다. 매개변수는 추상 메서드에서 매개변수의 자료형을 정의하기 때문에 따로 적어줄 필요가 없다. 스스로 추론하여 인식하기 때문이다.
 - java파일이 컴파일되면 class파일은 익명 내부 클래스인 경우에는 내부 클래스 수만큼 class파일이 생성되었지만 람다식을 이용하면 추가로 파일이 생성되지 않는다.
 - 자주 쓰이는 함수형 인터페이스는 미리 만들어져 제공하고 있으니 잘 찾아 사용할 것.
-  - [java.util.function API:](https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/util/function/package-summary.html)
+  - [java.util.function API](https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/util/function/package-summary.html)
 
 
 ## **메서드 참조(Method reference)**
