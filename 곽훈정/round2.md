@@ -28,11 +28,33 @@ FileReade / FileWriter</br>  InputStreamReader / OutputStreamWriter</br>  PrintW
 ![image](https://user-images.githubusercontent.com/77083074/203727118-98d6c68e-7ae4-4298-b16d-1477dfcfe80a.png)
 - 더 이상 읽을 수 없다면 -1 을 리턴하는데, 이것을 이용하여 읽을 수 있는 마지막 바이트까지 루프를 돌며 한 바이트씩 읽을 수 있다.
 ```java
-InputStream is = new FileInputStream("C:test.jpg);
+InputStream is = new FileInputStream("C:/test.jpg);
 int readByte;
 while ((readByte=is.read()) != -1) {...}
 ```
+### read(byte[] b) 메소드
+- 입력 스트림으로부터 매개값으로 주어진 바이트 배열의 길이만큼 바이트를 읽고 배열에 저장한다. 그리고 읽은 바이트 수를 리턴한다.
+- 실제로 읽은 바이트 수가 배열의 길이보다 작을경우 읽은 수만큼만 리턴한다.
+- ex) 입력 스트림에서 5개의 바이트가 들어온다면 아래와 같이 길이 3인 바이트 배열로 두번 읽을 수 있다.
+![image](https://user-images.githubusercontent.com/77083074/203729265-1adc5220-598d-454d-8e43-8315f25d70d5.png)
+- read() 메소드 처럼 마지막 바이트까지 루프를 돌며 읽을 수 있다.
+```java
+InputStream is = new FileInputStream("C:/test.jpg);
+int readByteNo;
+byte[] readBytes = new byte[100];
+while ((readByteNo=is.read(readBytes)) != -1) {...}
+```
+- read() 메소드는 100번을 루핑해서 읽어들여야하는 반면 read(byte[] b) 메소드는 한번 읽을 때 매개값으로 주어진 바이트 배열 길이만큼 읽기 때문에 루핑 횟수가 현저히 줄어든다. => 많은 양의 바이트를 읽을 때는 read(byte[] b) 메소드가 유용.
 
+### read(byte[] b, int off, int len) 메소드
+- 입력 스트림으로부터 len개의 바이트만큼 읽고, 매개값으로 주어진 바이트 배열 b[off]부터 len개 까지 저장한다. 그리고 읽은 바이트 수인 len개를 리턴한다.(마찬가지로 읽은수만큼)
+- ex) 입력 스트림에서 전체 5개의 바이트가 들어오고, 여기서 3개만 읽어 b[2], b[3], b[4]에 각각 저장한다면 아래와 같이 할 수 있다.
+![image](https://user-images.githubusercontent.com/77083074/203731134-24ce3334-a235-4151-a67f-12004f63406e.png)
+- read(byte[] b) 와의 차이점은 한 번에 읽어들이는 바이트 수를 len 매개값으로 조절할 수 있고, 배열에서 저장이 시작되는 인덱스를 지정할 수 있다는 점이다.
+  - 만약 off =0, len = 배열의 길이  --> read(byte[] b)와 동일하다.
+
+### close() 메소드
+- InputStream을 더 이상 사용하지 않을 경우 close() 메소드를 호출해서 InputStream에서 사용했던 시스템 자원을 풀어준다.
 
 
 # **Byte와 Character 스트림**
