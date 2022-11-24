@@ -18,9 +18,20 @@ FileReade / FileWriter</br>  InputStreamReader / OutputStreamWriter</br>  PrintW
 
 ## **InputStream**
 - 바이트 기반 입력 스트림의 최상위 클래스로 추상 클래스이다.
-- 모든 바이트 기반 입력 스트림은 이 클래슬르 상속받아서 만들어진다.
+- 모든 바이트 기반 입력 스트림은 이 클래스를 상속받아서 만들어진다.
 
 ![image](https://user-images.githubusercontent.com/77083074/203725929-4c7d1059-cf63-4591-b084-c51b6ae0f44f.png)
+
+### read() 메소드
+- 입력 스트림으로부터 1바이트를 읽고 4바이트 int 타입으로 리턴한다. 따라서 리턴된 4바이트 중 끝의 1바이트에만 데이터가 들어 있다. 
+  - ex) 입력 스트림에서 5개의 바이트가 들어온다면 아래 그림과 같이 read() 메소드로 1바이트씩 5번 읽을 수 있다.
+![image](https://user-images.githubusercontent.com/77083074/203727118-98d6c68e-7ae4-4298-b16d-1477dfcfe80a.png)
+- 더 이상 읽을 수 없다면 -1 을 리턴하는데, 이것을 이용하여 읽을 수 있는 마지막 바이트까지 루프를 돌며 한 바이트씩 읽을 수 있다.
+```java
+InputStream is = new FileInputStream("C:test.jpg);
+int readByte;
+while ((readByte=is.read()) != -1) {...}
+```
 
 
 
@@ -30,7 +41,7 @@ FileReade / FileWriter</br>  InputStreamReader / OutputStreamWriter</br>  PrintW
   - 그림, 멀티미디어, 문자 등 모든 종류의 데이터를 받고 보낼 수 있다.
 - 문자(Character) 기반 스트림
   - 오직 문자만 받고 보낼 수 있도록 특화되어 있다.
-  -
+  
 
 
 # **표준 스트림 (System.in, System.out, System.err)**
