@@ -1,4 +1,4 @@
-**스트림은 단일 방향으로 연속적으로 흘러가는 것을 말하는데, 물이 높은 곳에서 낮은 곳으로 흐르듯이 데이터는 출발지에서 나와 도착지로 들어간다는 개념이다.
+**스트림은 단일 방향으로 연속적으로 흘러가는 것을 말하는데, 물이 높은 곳에서 낮은 곳으로 흐르듯이 데이터는 출발지에서 나와 도착지로 들어간다는 개념이다.**
 
 # **InputStream(입력 스트림)과 OutputStream(출력 스트림)**
 - 프로그램이 데이터를 입력 받을 때에는 입력 스트림. 출발지는 키보드, 파일, 네트워크상의 프로그램이 될 수 있다.
@@ -16,7 +16,22 @@ FileInputStream / FileOutputStream</br>    DataInputStream / DataOutputStrema</b
 |Reader / Writer | 문자 단위 입출력을 위한 최상위 스트림 클래스|
 FileReade / FileWriter</br>  InputStreamReader / OutputStreamWriter</br>  PrintWriter</br>  BufferdReader / BufferedWriter| 문자 단위 입출력을 위한 하위 스트림 클래스|
 
+## **InputStream**
+- 바이트 기반 입력 스트림의 최상위 클래스로 추상 클래스이다.
+- 모든 바이트 기반 입력 스트림은 이 클래슬르 상속받아서 만들어진다.
+
+![image](https://user-images.githubusercontent.com/77083074/203725929-4c7d1059-cf63-4591-b084-c51b6ae0f44f.png)
+
+
+
 # **Byte와 Character 스트림**
+스트림 클래스는 크게 두 종류로 구분된다. 
+- 바이트(byte) 기반 스트림
+  - 그림, 멀티미디어, 문자 등 모든 종류의 데이터를 받고 보낼 수 있다.
+- 문자(Character) 기반 스트림
+  - 오직 문자만 받고 보낼 수 있도록 특화되어 있다.
+  -
+
 
 # **표준 스트림 (System.in, System.out, System.err)**
 
