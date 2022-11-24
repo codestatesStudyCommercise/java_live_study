@@ -16,6 +16,7 @@ FileInputStream / FileOutputStream</br>    DataInputStream / DataOutputStrema</b
 |Reader / Writer | 문자 단위 입출력을 위한 최상위 스트림 클래스|
 FileReade / FileWriter</br>  InputStreamReader / OutputStreamWriter</br>  PrintWriter</br>  BufferdReader / BufferedWriter| 문자 단위 입출력을 위한 하위 스트림 클래스|
 
+---
 ## **InputStream**
 - 바이트 기반 입력 스트림의 최상위 클래스로 추상 클래스이다.
 - 모든 바이트 기반 입력 스트림은 이 클래스를 상속받아서 만들어진다.
@@ -56,6 +57,53 @@ while ((readByteNo=is.read(readBytes)) != -1) {...}
 ### close() 메소드
 - InputStream을 더 이상 사용하지 않을 경우 close() 메소드를 호출해서 InputStream에서 사용했던 시스템 자원을 풀어준다.
 
+---
+## **OutputStrema**
+- 바이트 기반 출력 스트림의 최상위 클래스로 추상 클래스이다.
+- 모든 바이트 기반 출력 스트림 클래스는 이 클래스를 상속받아서 만들어진다.
+![image](https://user-images.githubusercontent.com/77083074/203741744-a4863c3a-1276-44da-be3f-a74ed6350487.png)
+
+### write(int b)메소드
+- 매개 변수로 주어진 int 값에서 끝에 있는 1바이트만 출력 스트림으로 보낸다.
+- 매개 변수가 int 타입이므로 4바이트 모두를 보내는 것으로 오해할 수 있다.
+![image](https://user-images.githubusercontent.com/77083074/203743210-00825f0b-f796-4401-98e6-e7a2293e58e4.png)
+```java
+OutputStream os = new FileOutputStream(":/test.txt");
+byte[] data = "ABC".getBytes();
+for(int i=0; i<data.length; i++) {
+  os.write(data[i]); // "A", "B", "C" 를 하나씩 풀력
+  }
+```
+### write(byte[] b) 메소드
+- 매개값으로 주어진 바이트 배열의 모든 바이트를 출력 스트림으로 보낸다.
+![image](https://user-images.githubusercontent.com/77083074/203743761-a9aafdd3-9287-4260-9fc9-61b0cede3916.png)
+```java
+OutputStream os = new FileOutputStream("C:/test.txt");
+byte[] data = "ABC".getBytes();
+os.write(data); //"ABC" 모두 출력
+```
+
+### write(byte[] b, int off, int len) 메소드
+- b[off] 부터 len 개의 바이트를 출력 스트림으로 보낸다.
+![image](https://user-images.githubusercontent.com/77083074/203744063-d37c6c00-4af4-45ba-a397-3ebe4fb2b1db.png)
+```java
+OutputStream os = new FileOutputStream("C:/test.txt");
+byte[] data = "ABC".getBytes();
+os.write(data, 1, 2); // "BC" 만 출력
+```
+
+### flush()와 close() 메소드
+- 출력 스트림은 내부에 작은 버퍼(buffer)가 있어서 데이터가 출력되기 전에 버퍼에 쌓여있다가 순서대로 출력된다.
+- flush() 메소드는 버퍼에 잔류하고 있는 데이터를 모두 출력시키고 버퍼를 비우는 역할을 한다.
+- 프로그램에서 더 이상 출력할 데이터가 없다면 flush() 메소드를 마지막으로 호출하여 버퍼에 잔류하는 모든 데이터가 출력되도록 해야 한다.
+- OutputStream을 더 이상 사용하지 않을 경우 close() 메소드를 호출해서 OutputStream에서 사용했던 시스템 자원을 풀어준다.
+```java
+OutputStream os = new FileOutputStream("C:/test.txt");
+byte[] data = "ABC".getBytes();
+os.write(data);
+os.flush();
+os.close();
+```
 
 # **Byte와 Character 스트림**
 스트림 클래스는 크게 두 종류로 구분된다. 
@@ -67,5 +115,6 @@ while ((readByteNo=is.read(readBytes)) != -1) {...}
 
 
 # **표준 스트림 (System.in, System.out, System.err)**
+- 자바는 콘솔로부터 데이터를 입력 받을 때 System.in 을 사용하고, 콘솔에 데이터를 출력할 때 System.out을 사용한다. 에러를 출력할 때에는 System.err를 사용한다.
 
 # **파일 읽고, 쓰기, 수정**
