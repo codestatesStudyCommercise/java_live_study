@@ -14,10 +14,7 @@
 |InputStream / OutputStream|바이트 단위 입출력을 위한 최상위 입출력 스트림 클래스|
 FileInputStream / FileOutputStream  DataInputStream / DataOutputStrema  ObejctInputStrema / ObjectOutputStream  PrintStream  BufferedInputStream / BufferedOutputStream| 바이트 단위 입출력을 위한 하위 스트림 클래스|
 |Reader / Writer | 문자 단위 입출력을 위한 최상위 스트림 클래스|
-FileReade / FileWriter  
-InputStreamReader / OutputStreamWriter  
-PrintWriter  
-BufferdReader / BufferedWriter| 문자 단위 입출력을 위한 하위 스트림 클래스|
+FileReade / FileWriter  InputStreamReader / OutputStreamWriter  PrintWriter  BufferdReader / BufferedWriter| 문자 단위 입출력을 위한 하위 스트림 클래스|
 
 # **Byte와 Character 스트림**
 
