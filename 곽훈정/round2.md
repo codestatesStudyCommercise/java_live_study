@@ -105,11 +105,16 @@ os.flush();
 os.close();
 ```
 
+
 # **Byte와 Character 스트림**
 스트림 클래스는 크게 두 종류로 구분된다. 
 - 바이트(byte) 기반 스트림
+  - 최상위 클래스 : InputStrema / OutputStream
+  - 하위 클래스 : XXXInputStrema / XXXOutputStream   ex)FileInputStream / FileOutputStream
   - 그림, 멀티미디어, 문자 등 모든 종류의 데이터를 받고 보낼 수 있다.
 - 문자(Character) 기반 스트림
+  - 최상위 클래스 : Reader / Writer
+  - 하위 클래스 : XXXReader / XXXWriter   ex)FileReader / FileWriter
   - 오직 문자만 받고 보낼 수 있도록 특화되어 있다.
   
 
@@ -117,4 +122,58 @@ os.close();
 # **표준 스트림 (System.in, System.out, System.err)**
 - 자바는 콘솔로부터 데이터를 입력 받을 때 System.in 을 사용하고, 콘솔에 데이터를 출력할 때 System.out을 사용한다. 에러를 출력할 때에는 System.err를 사용한다.
 
+## System.in
+- InputStream 타입의 필드이므로 InpustStream 변수로 참조가 가능하다.
+- 키보드로부터 어떤 키가 입력되었는지 확인하려면 read() 메소드로 한 바이트를 읽으면 된다. 리턴된 int 값에는 십진수 아스키 코드가 들어 있다.
+- InputStream의 read() 메소드는 1바이트만 읽기 때문에 1바이트의 아스키 코드로 표현되는 숫자, 영어, 특수문자는 프로그램에서 잘 읽을 수 있지만, 한글과 같이 2바이트를 필요로 하는 유니코드는 read() 메소드로 읽을 수 없다.
+  - read(byte[] b) 또는 read(byte[] b, int off, int len) 메소로 전체 입력된 내용을 바이트 배열로 받고, 이배열을 이용해서 String 객체를 생성하면 된다.
+```java
+        InputStream is = System.in;
+        byte[] datas = new byte[100];
+
+        System.out.println("이름: ");
+        int nameBytes = is.read(datas);
+        String name = new String(datas, 0, nameBytes-2); //끝에 2바이트는 Enter키에 해당하는 캐리지리턴(13)과 라인피드(10) 이므로 문자열에서 제외
+
+        System.out.println("하고 싶은 말: ");
+        int commentBytes = is.read(datas);
+        String comment = new String(datas, 0, commentBytes - 2);
+
+        System.out.println("입력한 이름: " + name);
+        System.out.println("입력한 하고 싶은말: " + comment);
+```
+        
+        
+## System.out
+- out은 PrintStream 타입의 필드이다. PrintStream이 OutputStream의 하위 클래스이므로 out 필드를 OutputStream 타입으로 변환해서 사용할 수 있다.
+  - OutputStream os = System.out;
+- OutputStream의 write(int b) 메소드는 1바이트만 보낼 수 있다. 2바이트로 표현되는 한글은 출력할 수 없다.
+  - 한글을 바이트 배열로 얻은 다음 write(byte[] b) 또는 write(byte[] b, int off, int len) 메소드로 콘솔에 출력하면 된다.
+```java
+        OutputStream os = System.out;
+
+        for (byte b = 48; b < 58; b++) {
+            os.write(b); //아스키코드 48~57까지 출력 >> 0~9까지
+        }
+        os.write(10); //라인피드(10) 개행
+
+        for (byte b = 97; b < 123; b++) {
+            os.write(b); //아스키 코드 97~122까지 출력 >> a~z까지
+        }
+        os.write(10);
+
+        String hangul = "가나다라마바사아자차카타파하";
+        byte[] hangulBytes = hangul.getBytes();
+        os.write(hangulBytes);
+
+        os.flush();
+```
+     
+        
 # **파일 읽고, 쓰기, 수정**
+
+## File클래스
+- C:/Temp 디렉토리의 file.txt.파일을 객체로 생성하기
+  - ```java
+  - File file = new File("C:/Temp/file.txt");
+  - ```
