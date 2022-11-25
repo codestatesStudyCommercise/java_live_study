@@ -174,6 +174,101 @@ os.close();
 
 ## File클래스
 - C:/Temp 디렉토리의 file.txt.파일을 객체로 생성하기
-  - ```java
-  - File file = new File("C:/Temp/file.txt");
-  - ```
+```java
+  File file = new File("C:/Temp/file.txt"); 
+```
+  - 디렉토리 구분자는 윈도우에서는 / 또는 \ , 유닉스나 리눅스에서는 / 를 사용한다. 만약 \를 디렉토리 구분자로 사용한다면 이스케이프 문자(\\)로 기술해야 한다.
+- File 객체를 생성했다고 해서 파일이나 디렉토리가 생성되지 않는다. 생성자 매개값으로 주어진 경로가 유효하지 않더라도 컴파일 에러나 예외가 발생하지 않는다. File 객체를 통해 해당 경로에 실제로 파일이나 디렉토리가 있는지 확ㅇ니하려면 exists() 메소드를 호출할 수 있다.
+```java
+boolean isExist = file.exists();
+```
+|메소드|설명|
+|:---|:---|
+createNewFile()|새로운 파일을 생성
+mkdir()|새로운 디렉토리를 생성
+mkdirs()|경로상에 없는 모든 디렉토리를 생성
+delete()|파일 또는 디렉토리 삭제
+canExecute()|실행할 수 있는 파일인지 여부
+canRead()|읽을 수 있는 파일인지 여부
+canWrite()|수정 및 저장할 수 있는 파일인지 여부
+getName()|파일의 이름을 리턴
+getParent()|부모 디렉토리를 리턴
+getParentFile()|부모 디렉토리를 File 객체로 생성 후 리턴
+getPath()|전체 경로를 리턴
+isDirectiory()|디렉토리인지 여부
+isFile()|파일인지 여부
+isHidden()|숨김 파일인지 여부
+lastModified()|마지막 수정 날짜 및 시간을 리턴
+length()|파일 크기를 리턴
+list()|디렉토리에 포함된 파일 및 서브디렉토리 목록 전부를 String 배열로 리턴
+list(FilenameFilter filter)|디렉토리에 포함된 파일 및 서브디렉토리 목록 중에 FilenameFilter에 맞는 것만 String 배열로 리턴
+listFiles()|디렉토리에 포함된 파일 및 서브 디렉토리 목록 전부를 File배열로 리턴
+listFiles(FilenameFilter filter)|디렉토리에 포함된 파일 및 서브디록토리 목록 중에 FilenameFilter에 맞는 것만 File 배열로 리턴
+
+## FileInputStream
+- 파일로부터 바이트 단위로 읽어들일 때 사용하는 바이트 기반 입력 스트림. 바이트 단위로 읽기 때문에 그림, 오디오, 비디오, 텍스트 파일 등 모든 종류의 파일을 읽을 수 있다.
+- FileInputStream은 InputStream의 하위 클래스이기 때문에 사용 방법이 InputStream과 동일하다.
+  - 한 바이트를 읽기 위해서 read() 메소드를 사용하거나 읽은 바이트를 byte 배열에 저장하기 위해 read(byte[] b) 또는 read(byte[] b, int off, int len) 메소드를 사용한다.
+```java
+public class FileInputStreamExample {
+    public static void main(String[] args) {
+        try {
+            FileInputStream fis = new FileInputStream(
+                    "C:\\Users\\HunJeong\\IdeaProjects\\study\\src\\stream\\FileInputStreamExample.java");
+            int data;
+            while ((data = fis.read()) != -1) {
+                System.out.write(data);
+            }
+            fis.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}// 콘솔에 그대로 출력 됨
+```
+
+## FileOutputStream
+- 바이트 단위로 데이터를 파일에 저장할 때 사용하는 바이트 기반 출력 스트림. 모든 종류의 데이터를 파일로 저장할 수 있다.
+  - 주의사항 : 파일이 이미 존재할 경우 데이터를 출력하면 파일을 덮어쓰게 된다. 기존의 파일 내용 끝에 데이터를 추가할 경우 FileOutputStream 생성자의 두 번째 매개값을 true로 준다.
+- write() 메소드를 호출한 이후에 flush() 메소드로 출력 버퍼에 잔류하는 데이터를 완전히 ㅜㅊㄹ력하도록 하고, close() 메소드를 호출해서 파일을 닫아준다.
+```java
+ public static void main(String[] args) throws Exception {
+        String originalFileName =
+                "C:\\Temp\\IMG_2294.JPG";
+
+        String targetFileName ="C:/Temp/IU.jpg";
+
+        FileInputStream fis = new FileInputStream(originalFileName);
+        FileOutputStream fos = new FileOutputStream(targetFileName);
+
+        int readByteNo;
+        byte[] readBytes = new byte[100];
+
+        while ((readByteNo = fis.read(readBytes)) != -1) {
+            fos.write(readBytes, 0, readByteNo);
+        }
+
+        fos.flush();
+        fos.close();
+        fis.close();
+
+        System.out.println("복사 완료");
+        
+    }
+```
+
+## FileWriter
+- 텍스트 데이터를 파일에 저장할 때 사용하는 문자 기반 스트림. 텍스트가 아닌 것들은 저장 할 수 없다. FileWriter를 생성하면 지정된 파일이 이미 존재할 경우 그 파일을 덮어쓰게 되므로, 기존의 파일 내용 끝에 추가할 경우에는 FileWriter 생성자 두 번째 매개값으로 true를 주면 된다.
+```java
+   public static void main(String[] args) throws Exception {
+        File file = new File("C:/Temp/file.txt");
+        FileWriter fw = new FileWriter(file, true);
+        fw.write("FileWriter는 한글로된" + "\r\n");
+        fw.write("문자열을 바로 출력할 수 있다." + "\r\n");
+        fw.flush();
+        fw.close();
+        System.out.println("파일에 저장 되었습니다.");
+    }
+```
+
+
