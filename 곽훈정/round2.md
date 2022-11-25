@@ -271,4 +271,75 @@ public class FileInputStreamExample {
     }
 ```
 
+## 보조스트림
+- 다른 스트림과 연결되어 여러 가지 편리한 기능을 제공해주는 스트림. 보조 스트림을 필터 스트림이라고도 하는데, 이는 보조 스트림의 일부가 FilterInputStream, FilterOutputStream의 하위 클래스이기 때문이다.
+- 보조 스트림은 자체적으로 입출력을 수행할 수 없기 때문에 입력 소스와 바로 연결되는 InputStream, FileInputStream, Reader, FileReader, 출력 소스와 바로 연결되는 OutputStream, FileOutputStream, Writer, FileWriter 등에 연결해서 입출력을 수행한다.
+-  문자 변환, 입출력 성능 향상, 기본 데이터 타입 입출력, 객체 입출력 등의 기능을 제공한다.
+-  보조 스트림은 또 다른 보조 스트림에도 연결되어 스트림 체인을 구성할 수 있다.
+-  ex) 문자 변환 보조 스트림 InputStreamReader를 다시 성능 향상 보조 스트림인 BufferedReader에 연결할 수 있다.
+ ```java
+ InputStream is = System.in;
+ InputStreamReader reader = new InputStreamReader(is);
+ BufferedReader br = new BufferedReader(reader);
+ ```
+### 문자 변환 보조 스트림
+- 소스 스트림이 바이트 기반 스트림이면서 입출력 데이터가 문자라면 Reader와 Writer로 변환해서 사용하는 것을 고려해야 한다.
+  - Reader와 Writer는 문자 단위로 입출력하기 때문에 바이트 기반 스트림보다 편리하고, 문자셋의 종류를 지정할 수 있기 때문에 다양한 문자를 입출력할 수 있다.
 
+### 성능 향상 보조 스트림
+- 프로그램의 실행 성능은 입출력이 가장 늦은 장치를 따라간다. CPU와 메모리가 아무리 뛰어나도 하드 디스크의 입출력이 늦어지면 프로그램의 실행성능은 하드 디스크의 처리 속도에 맞춰진다.
+- 프로그램은 직접 하드 디스크에 데이터를 보내지 않고 메모리 버퍼에 데이터를 보냄으로써 쓰기 속도가 향상된다. 버퍼는 데이터가 쌓이기를 기다렸다가 꽉 차게 되면 데이터를 한꺼번에 하드 디스크로 보냄으로써 출력 횟수를 줄여준다.
+  - 바이트 기반 스트림 : BufferedInputStream, BufferedOutputStream
+  - 문자 기반 스트림 : BufferedReader, BufferedWriter
+- BufferedInputStream과 BufferedReader 보조 스트림은 생성자의 매개값으로 준 입력 스트림과 연결되어 8192 내부 버퍼 사이즈를 가지게 된다. 8192바이트 / 8192문자 가 저장될 수 있다.
+```java
+BufferedInputStream bis = new BufferedInputStream(바이트입력스트림);
+BufferedReader br = new BufferedReader(문자입력스트림);
+```
+
+버퍼 사용여부에 따른 성능비교
+```java
+   public static void main(String[] args) throws Exception {
+        long start = 0;
+        long end = 0;
+
+        FileInputStream fis1 = new FileInputStream("C:\\Users\\HunJeong\\Documents\\카카오톡 받은 파일\\cat2.gif");
+
+        start = System.currentTimeMillis();
+        while (fis1.read() != -1) {
+        }
+        end = System.currentTimeMillis();
+        System.out.println("사용하지 않았을 때: "+ (end-start) + "ms");
+        fis1.close();
+
+        FileInputStream fis2 = new FileInputStream("C:\\Users\\HunJeong\\Documents\\카카오톡 받은 파일\\cat2.gif");
+
+        BufferedInputStream bis = new BufferedInputStream(fis2); // 버퍼 스트림 생성
+        start = System.currentTimeMillis();
+        while (bis.read() != -1) {
+        }
+        end = System.currentTimeMillis();
+        System.out.println("사용했을 때: " + (end - start) + "ms");
+        bis.close();
+        fis2.close();
+    }
+/// 사용하지 않았을 때: 134ms
+/// 사용했을 때: 1ms
+```
+- BufferedReader는 readLine() 메소드를 추가적으로 더 가지고 있는데, 이 메소드를 이요하면 캐리지리턴(\r) 라인피드(\n)로 구분된 행 단위의 문자열을 한꺼번에 읽을 수 있다.
+```java
+ public static void main(String[] args) throws Exception {
+
+        InputStream is = System.in;
+        Reader reader = new InputStreamReader(System.in);
+        BufferedReader br = new BufferedReader(reader); //버퍼스트림생성
+
+        System.out.println("입력 :");
+        String lineString = br.readLine();
+
+        System.out.println("출력 : " + lineString);
+    }
+ // 입력 :
+ // 한줄 전체를 읽습니다.
+ // 출력 : 한줄 전체를 읽습니다.
+```
